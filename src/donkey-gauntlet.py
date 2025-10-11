@@ -8,6 +8,32 @@ import pygame, sys, random
 import time
 
 pygame.init()
+
+
+
+#-----------------------------------------------
+# Video Driver check
+#-----------------------------------------------
+# If opened in non desktop env might open without
+# input being configured properly.
+# to avoid this we check and exit if it
+# appears not in X11 or Wayland env
+
+# Detect which SDL video driver is actually being used
+driver = pygame.display.get_driver()
+
+# Check for common “non-GUI” backends
+if driver in ("fbcon", "directfb", "svgalib", "kmsdrm", "offscreen", "dummy"):
+    print(f"  Warning: SDL video driver is '{driver}'.")
+    print("   This mode may not support keyboard or mouse input properly.")
+    print("   Run this app from a desktop environment with X11 or Wayland.")
+    # print("   If you’re testing headless, use: SDL_VIDEODRIVER=dummy")
+    exitgame()
+else:
+    print(f"Using SDL video driver: {driver}")
+
+
+
 pygame.mixer.init() # for sounds
 pygame.display.set_caption("donkey-gauntlet")
 

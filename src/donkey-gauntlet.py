@@ -22,13 +22,10 @@ pygame.init()
 # Detect which SDL video driver is actually being used
 driver = pygame.display.get_driver()
 
-# Check for common “non-GUI” backends
-if driver in ("fbcon", "directfb", "svgalib", "kmsdrm", "offscreen", "dummy"):
-    print(f"  Warning: SDL video driver is '{driver}'.")
-    print("   This mode may not support keyboard or mouse input properly.")
-    print("   Run this app from a desktop environment with X11 or Wayland.")
-    # print("   If you’re testing headless, use: SDL_VIDEODRIVER=dummy")
-    exitgame()
+# Only run if know GUI backend detected
+if driver not in ("x11", "wayland", "cocoa", "windows"):
+    print(f"Error: No GUI backend detected (SDL driver '{driver}').")
+    sys.exit(1)
 else:
     print(f"Using SDL video driver: {driver}")
 

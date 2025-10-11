@@ -1,0 +1,9 @@
+# Emacs backups
+*~
+\#*#
+
+# Python caches
+__pycache__/
+*.pyc
+
+

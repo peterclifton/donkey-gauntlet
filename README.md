@@ -16,3 +16,4 @@ This project is licensed under the **GPL-3.0 License**. See [LICENSE](LICENSE) f
 
 - Python 3.x
 - Pygame
+- A graphical environment (X11 or Wayland)

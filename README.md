@@ -4,7 +4,7 @@ A simple Python/Pygame game inspired by **Donkey.bas** (c) 1981 Microsoft.
 
 ## License
 
-This project is licensed under the **GPL-3.0 License**. See [LICENSE](LICENSE) for more details.
+This project is licensed under the **GPL-3.0 License**. See [LICENSE](LICENSE) for details.
 
 ## Credits / Inspiration
 

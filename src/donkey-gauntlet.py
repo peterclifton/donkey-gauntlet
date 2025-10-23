@@ -179,7 +179,7 @@ def check_for_crash():
 
 def car_update():
     global car_x
-    car_x = CAR_START_X + (60 * car_in_right_lane_flag)
+    car_x = CAR_START_X + (70 * car_in_right_lane_flag)
 
 def donkey_update():
     global donkey_y
@@ -194,7 +194,7 @@ def donkey_update():
     elif line_top_offset == 20 and random.random() < 0.5: # create new donkey
         donkey_in_right_lane_flag = (1 if random.random() < 0.5 else 0)
         donkeyPace = donkeyPace + (1 if random.random() < 0.5 else 0)
-        donkey_x = DONKEY_X_IN_LEFT_LANE + (70 * donkey_in_right_lane_flag)
+        donkey_x = DONKEY_X_IN_LEFT_LANE + (80 * donkey_in_right_lane_flag)
         donkey_in_play = 1
     
     if donkey_y > DONKEY_END_Y:
